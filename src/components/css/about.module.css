@@ -85,6 +85,12 @@
   margin-right: 6.5rem;
 }
 
+.div2_1:hover, .div2_2:hover, .div2_3:hover {
+  border-left: 0.3rem solid var(--accentColor);
+  transition: 0.3s ease-in;
+}
+
+
 /* Media query para pantallas de 768px o menos */
 @media (max-width: 768px) {
   .section {
