@@ -65,6 +65,8 @@ h1 {
   fill: var(--titleFonts); /* Color inicial */
   transition: fill 0.3s ease; /* Transición suave */
   transition: 0.5s ease;
+  opacity: 0.5; /* Inicialmente apagado */
+  animation: blink 2s infinite; /* Animación por defecto */
 }
 
 /* Estilo para el hover */
@@ -90,4 +92,27 @@ h1 {
   100% {
     color: var(--accentColor);
   }
+}
+
+/* Animación de encendido/apagado para cada ícono */
+@keyframes blink {
+  0%, 100% {
+    opacity: 0.5; /* Apagado */
+  }
+  50% {
+    opacity: 1; /* Encendido */
+  }
+}
+
+/* Secuencia de encendido de los íconos */
+.div2 a:nth-child(1) .svg {
+  animation-delay: 0s;
+}
+
+.div2 a:nth-child(2) .svg {
+  animation-delay: 0.5s; /* Retraso para el segundo ícono */
+}
+
+.div2 a:nth-child(3) .svg {
+  animation-delay: 1s; /* Retraso para el tercer ícono */
 }
