@@ -51,13 +51,13 @@
     color: var(--accentColor);
 }
 
-.div2>div>svg{
+.div2>div>a>svg{
     fill: var(--titleFonts); 
     transition: fill 0.3s ease;
     transition: 0.5s ease;
 }
 
-.div2>div>svg:hover{
+.div2>div>a>svg:hover{
     cursor: pointer;
     fill: var(--accentColor);
     filter: drop-shadow(0 0 10px var(--accentColor));
