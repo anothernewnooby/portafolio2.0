@@ -1,0 +1,14 @@
+---
+import header from "../components/css/header.module.css";
+---
+
+<header class={header.header}>
+  <nav class={header.nav}>
+    <button class={header.button}></button>
+    <a href="/" class={header.a}>Home</a>
+    <a href="/about" class={header.a}>About</a>
+    <a href="#" class={header.a}>Projects</a>
+    <a href="#" class={`${header.a} ${header.active}`}>Contact</a>
+    <button class={header.button}></button>
+  </nav>
+</header>

@@ -1,0 +1,97 @@
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 0 auto;
+  border-bottom: 0.1rem solid var(--otherFonts);
+}
+
+.h1 {
+  font-family: var(--font);
+  font-size: 3rem;
+  color: var(--titleFonts);
+}
+
+.nav {
+  max-width: 100rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 6rem;
+  padding: 2rem;
+}
+
+.a {
+  font-family: var(--font);
+  font-size: 3.5rem;
+  color: var(--otherFonts);
+  text-decoration: none;
+  transition: color 0.3s ease, filter 0.3s ease;
+}
+
+.active {
+  animation: flicker2 2.15s ease-out infinite;
+}
+
+.a:hover {
+  animation: flicker 0.15s ease-out forwards;
+  filter: drop-shadow(0 0 10px var(--accentColor));
+  color: var(--accentColor);
+}
+
+/* animación de flicker */
+@keyframes flicker {
+  0% {
+    color: var(--accentColor);
+  }
+  25% {
+    color: transparent;
+  }
+  50% {
+    color: var(--accentColor);
+  }
+  75% {
+    color: transparent;
+  }
+  100% {
+    color: var(--accentColor);
+  }
+}
+
+/* animación de flicker2 con pausa de 2 segundos */
+@keyframes flicker2 {
+  /* Primer 0.15s: animación de parpadeo */
+  0%,
+  3%,
+  6%,
+  9%,
+  12% {
+    color: var(--accentColor);
+  }
+  1.5%,
+  4.5%,
+  7.5%,
+  10.5%,
+  13.5% {
+    color: transparent;
+  }
+
+  /* Pausa de 2 segundos */
+  15%,
+  93% {
+    color: var(--accentColor);
+  }
+
+  /* El ciclo termina en 100% */
+  100% {
+    color: var(--accentColor);
+  }
+}
+
+.button {
+  background-color: var(--accentColor);
+  width: 2rem;
+  height: 0.8rem;
+}

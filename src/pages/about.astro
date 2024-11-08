@@ -1,0 +1,79 @@
+---
+import Layout from "../layouts/Layout.astro";
+import about from "../components/css/about.module.css";
+---
+
+<Layout pageTitle={"About"}>
+  <section class={about.section}>
+    <div class={about.div1}>
+      <h3 class={about.titulo}>About</h3>
+      <p class={about.p1}>
+        Como desarrollador front-end, me enfoco en crear soluciones web que
+        combinan funcionalidad, diseño y experiencia del usuario. <br /><br /> Mi
+        objetivo es construir interfaces limpias, eficientes y accesibles, respaldadas
+        por código de alta calidad. <br />
+        <br />
+        Cada proyecto es una oportunidad para resolver retos de una manera estructurada
+        y metódica, siempre con el usuario final en mente, transformando ideas en
+        realidades.
+      </p>
+    </div>
+
+    <div class={about.div2}>
+      <div class={about.div2_1}>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="60"
+          height="60"
+          viewBox="0 0 24 24"
+          style="fill: rgba(104, 204, 221, 1);transform: ;msFilter:;"
+          ><path
+            d="m7.375 16.781 1.25-1.562L4.601 12l4.024-3.219-1.25-1.562-5 4a1 1 0 0 0 0 1.562l5 4zm9.25-9.562-1.25 1.562L19.399 12l-4.024 3.219 1.25 1.562 5-4a1 1 0 0 0 0-1.562l-5-4zm-1.649-4.003-4 18-1.953-.434 4-18z"
+          ></path></svg
+        >
+        <div>
+          <h3>Tecnologias Principales</h3>
+          <p>Astro, React, NextJs, TypeScript</p>
+        </div>
+      </div>
+      <div class={about.div2_2}>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="60"
+          height="60"
+          viewBox="0 0 24 24"
+          style="fill: rgba(104, 204, 221, 1);transform: ;msFilter:;"
+          ><path
+            d="M13.4 2.096a10.08 10.08 0 0 0-8.937 3.331A10.054 10.054 0 0 0 2.096 13.4c.53 3.894 3.458 7.207 7.285 8.246a9.982 9.982 0 0 0 2.618.354l.142-.001a3.001 3.001 0 0 0 2.516-1.426 2.989 2.989 0 0 0 .153-2.879l-.199-.416a1.919 1.919 0 0 1 .094-1.912 2.004 2.004 0 0 1 2.576-.755l.412.197c.412.198.85.299 1.301.299A3.022 3.022 0 0 0 22 12.14a9.935 9.935 0 0 0-.353-2.76c-1.04-3.826-4.353-6.754-8.247-7.284zm5.158 10.909-.412-.197c-1.828-.878-4.07-.198-5.135 1.494-.738 1.176-.813 2.576-.204 3.842l.199.416a.983.983 0 0 1-.051.961.992.992 0 0 1-.844.479h-.112a8.061 8.061 0 0 1-2.095-.283c-3.063-.831-5.403-3.479-5.826-6.586-.321-2.355.352-4.623 1.893-6.389a8.002 8.002 0 0 1 7.16-2.664c3.107.423 5.755 2.764 6.586 5.826.198.73.293 1.474.282 2.207-.012.807-.845 1.183-1.441.894z"
+          ></path><circle cx="7.5" cy="14.5" r="1.5"></circle><circle
+            cx="7.5"
+            cy="10.5"
+            r="1.5"></circle><circle cx="10.5" cy="7.5" r="1.5"></circle><circle
+            cx="14.5"
+            cy="7.5"
+            r="1.5"></circle></svg
+        >
+        <div>
+          <h3>Diseño UI/UX</h3>
+          <p>Creacion de interfaces intuitivas y atractivas</p>
+        </div>
+      </div>
+      <div class={about.div2_3}>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="60"
+          height="60"
+          viewBox="0 0 24 24"
+          style="fill: rgba(104, 204, 221, 1);transform: ;msFilter:;"
+          ><path
+            d="M20 12a2 2 0 0 0-.703.133l-2.398-1.963c.059-.214.101-.436.101-.67C17 8.114 15.886 7 14.5 7S12 8.114 12 9.5c0 .396.1.765.262 1.097l-2.909 3.438A2.06 2.06 0 0 0 9 14c-.179 0-.348.03-.512.074l-2.563-2.563C5.97 11.348 6 11.179 6 11c0-1.108-.892-2-2-2s-2 .892-2 2 .892 2 2 2c.179 0 .348-.03.512-.074l2.563 2.563A1.906 1.906 0 0 0 7 16c0 1.108.892 2 2 2s2-.892 2-2c0-.237-.048-.46-.123-.671l2.913-3.442c.227.066.462.113.71.113a2.48 2.48 0 0 0 1.133-.281l2.399 1.963A2.077 2.077 0 0 0 18 14c0 1.108.892 2 2 2s2-.892 2-2-.892-2-2-2z"
+          ></path></svg
+        >
+        <div>
+          <h3>Optimizcion</h3>
+          <p>Mejora de rendimiento y velocidad de carga.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

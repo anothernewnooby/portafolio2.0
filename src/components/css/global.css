@@ -1,0 +1,26 @@
+:root {
+  --primary: #262d37;
+  --titleFonts: #68ccdd;
+  --otherFonts: #6b7280;
+  --accentColor: #a6f5f7;
+  --font: "Ailerons";
+  --secondFont: "Montserrat", serif;
+}
+
+@font-face {
+  font-family: "Ailerons";
+  src: url("/fonts/Ailerons-Typeface.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+html {
+  height: auto;
+  /* overflow: hidden; */
+  font-size: 62.5%;
+}
+
+body {
+  background-image: linear-gradient(to bottom, #0c0a09, var(--primary));
+  background-repeat: no-repeat;
+}

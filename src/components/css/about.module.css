@@ -1,0 +1,142 @@
+.section {
+  width: 120rem;
+  height: 100dvh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  margin: 0 auto;
+}
+
+.div1 {
+  width: 50%;
+  padding: 2rem;
+}
+
+.titulo {
+  font-family: var(--font);
+  font-size: 5rem;
+  color: var(--titleFonts);
+  margin: 0 auto;
+  filter: drop-shadow(0 0 0.1rem var(--accentColor));
+  animation: flicker 0.5s ease-out forwards;
+}
+
+@keyframes flicker {
+  0% {
+    color: var(--accentColor);
+  }
+  25% {
+    color: transparent;
+  }
+  50% {
+    color: var(--accentColor);
+  }
+  75% {
+    color: transparent;
+  }
+  100% {
+    color: var(--accentColor);
+  }
+}
+
+.p1 {
+  font-family: var(--secondFont);
+  font-size: 2rem;
+  color: var(--otherFonts);
+  line-height: 3rem;
+}
+
+/* Estilo uniforme para div2 y sus elementos internos */
+.div2 {
+  width: 50%;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column; /* Coloca cada elemento de .div2 en una columna */
+  gap: 4rem; /* Espacio entre cada sección (div2_1, div2_2, div2_3) */
+}
+
+.div2 > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  padding: 1rem;
+  box-shadow: 0 0.1rem 0.1rem rgba(166, 246, 247, 0.315);
+}
+
+.div2 h3 {
+  font-family: var(--secondFont);
+  font-size: 3rem;
+  color: var(--titleFonts);
+  margin: 0;
+}
+
+.div2 p {
+  font-family: var(--secondFont);
+  font-size: 2rem;
+  color: var(--accentColor);
+  margin: 0;
+  margin-top: 1rem;
+}
+
+/* Ajustes específicos */
+.div2_1 h3 {
+  margin-right: 6.5rem;
+}
+
+/* Media query para pantallas de 768px o menos */
+@media (max-width: 768px) {
+  .section {
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .div1,
+  .div2 {
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .titulo {
+    font-size: 3rem;
+    text-align: center;
+  }
+
+  .p1 {
+    font-size: 1.6rem;
+    line-height: 2.5rem;
+    text-align: center;
+    padding: 2rem;
+    margin-right: 2rem;
+  }
+
+  .div2 {
+    gap: 2rem;
+  }
+
+  .div2 > div {
+    flex-direction: column; /* Cambia la dirección a columna para mejor ajuste */
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .div2 h3 {
+    font-size: 2.5rem;
+    text-align: center;
+  }
+
+  .div2 p {
+    font-size: 1.8rem;
+    text-align: center;
+  }
+
+  .div2_1 {
+    h3 {
+      text-align: center;
+      margin-right: 1rem;
+    }
+  }
+}
