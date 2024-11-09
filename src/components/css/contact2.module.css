@@ -1,0 +1,129 @@
+.section{
+    position: relative;
+    width: 100%;
+    height: 100dvh;   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.div1{
+    width: 100%;
+    height: 50rem;
+    background-color: var(--accentColor);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.h3{
+    font-family: var(--font);
+    font-size: 5rem;
+    color: var(--primary);
+    margin-right: 50rem;  
+    margin-bottom: 0.5rem; 
+}
+
+.div1>p{
+    font-family: var(--secondFont);
+    font-size: 2rem;
+    color: var(--secondFont);
+    margin-right: 50rem;
+    
+}
+
+.div2{
+    position: absolute;
+    top: 15%;
+    left: 60%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 2rem;
+    width: 42rem;
+    height: 70dvh;
+    background-color: #111827;
+}
+
+.form>div{
+    width: 80%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+.div2>h3{
+    font-family: var(--secondFont);
+    font-size: 2rem;
+    font-weight: 500;
+    color: var(--accentColor);
+    text-align: left;
+    margin-bottom: 9rem;
+}
+
+.form>div>label{
+    font-family: var(--secondFont);
+    font-size: 2rem;
+    font-weight: 200;
+    color: var(--accentColor);
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-top: 0.5rem;
+}
+
+.form>div>input{
+    width: 30rem;
+    height: 3rem;
+    background-color: #111827;
+    text-align: left;
+    color: var(--titleFonts);
+    font-family: var(--secondFont);
+    font-size: 2rem;
+    font-weight: 300;
+    border: none;
+    outline: none;
+}
+
+.separador{
+    width: 100rem;
+    height: 0.1rem;
+    background-color: var(--otherFonts);
+    margin-top: 0.5rem;
+    margin-bottom: 7rem;
+}
+
+.form>div>textarea{
+    width: 40rem;
+    height: 3rem;
+    background-color: #111827;
+    text-align: left;
+    color: var(--titleFonts);
+    font-family: var(--secondFont);
+    font-size: 2rem;
+    font-weight: 300;
+    border: none;
+    outline: none;
+}
+
+.form>button{
+    width: 15rem;
+    height: 3rem;
+    margin-left: 25rem;
+    background-color: var(--titleFonts);
+    border: none;
+    font-family: var(--secondFont);
+    font-size: 2rem;
+    border-radius: 0.3rem;
+    transition: 0.5s ease;
+}
+
+.form>button:hover{
+    background-color: var(--accentColor);
+    filter: drop-shadow( 0 0 0.5rem var(--accentColor));
+}

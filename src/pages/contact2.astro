@@ -1,0 +1,196 @@
+---
+import Layout from "../layouts/Layout.astro"
+import contact2 from "../components/css/contact2.module.css";
+
+
+---
+<script>
+    // Interfaces para tipar los datos del formulario
+    interface FormData {
+        nombre: string;
+        asunto: string;
+        email: string;
+        mensaje: string;
+    }
+
+    interface ValidationErrors {
+        nombre?: string;
+        asunto?: string;
+        email?: string;
+        mensaje?: string;
+    }
+
+    class FormValidator {
+        private form: HTMLFormElement;
+        private errors: ValidationErrors = {};
+
+        constructor() {
+            // Busca específicamente el formulario con ID 'contactForm'
+            this.form = document.getElementById('contactForm') as HTMLFormElement;
+            if (this.form) {
+                this.initializeFormListeners();
+            } else {
+                console.error('Formulario no encontrado');
+            }
+        }
+
+        private initializeFormListeners(): void {
+            this.form.addEventListener('submit', (e: Event) => {
+                e.preventDefault();
+                if (this.validateForm()) {
+                    this.handleSubmit();
+                }
+            });
+
+            // Validación en tiempo real
+            const fields = {
+                nombre: document.getElementById('nombre') as HTMLInputElement,
+                asunto: document.getElementById('asunto') as HTMLInputElement,
+                email: document.getElementById('email') as HTMLInputElement,
+                mensaje: document.getElementById('mensaje') as HTMLTextAreaElement
+            };
+
+            Object.entries(fields).forEach(([fieldName, element]) => {
+                element?.addEventListener('blur', () => {
+                    this.validateField(fieldName as keyof FormData, element.value);
+                    this.showFieldError(fieldName);
+                });
+            });
+        }
+
+        private validateField(fieldName: keyof FormData, value: string): boolean {
+            this.errors[fieldName] = undefined;
+
+            switch (fieldName) {
+                case 'nombre':
+                    if (!value.trim()) {
+                        this.errors[fieldName] = 'El nombre es requerido';
+                    } else if (value.length < 2) {
+                        this.errors[fieldName] = 'El nombre debe tener al menos dos caracteres';
+                    }
+                    break;
+
+                case 'asunto':
+                    if (!value.trim()) {
+                        this.errors[fieldName] = 'El asunto es requerido';
+                    } else if (value.length < 4) {
+                        this.errors[fieldName] = 'El asunto debe tener al menos cuatro caracteres';
+                    }
+                    break;
+
+                case 'email':
+                    if (!value.trim()) {
+                        this.errors[fieldName] = 'El correo electrónico es requerido';
+                    } else if (!/^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/.test(value)) {
+                        this.errors[fieldName] = 'El correo electrónico no es válido';
+                    }
+                    break;
+
+                case 'mensaje':
+                    if (!value.trim()) {
+                        this.errors[fieldName] = 'El mensaje es requerido';
+                    } else if (value.length < 10) {
+                        this.errors[fieldName] = 'El mensaje debe tener al menos diez caracteres';
+                    }
+                    break;
+            }
+
+            return !this.errors[fieldName];
+        }
+
+        private validateForm(): boolean {
+            const formData = this.getFormData();
+            let isValid = true;
+
+            Object.entries(formData).forEach(([key, value]) => {
+                const fieldValid = this.validateField(key as keyof FormData, value);
+                this.showFieldError(key);
+                if (!fieldValid) isValid = false;
+            });
+
+            return isValid;
+        }
+
+        private showFieldError(fieldName: string): void {
+            const field = document.getElementById(fieldName);
+            const errorId = `error-${fieldName}`;
+            let errorElement = document.getElementById(errorId);
+            
+            if (this.errors[fieldName as keyof ValidationErrors]) {
+                if (!errorElement) {
+                    errorElement = document.createElement('div');
+                    errorElement.id = errorId;
+                    errorElement.className = 'error-message';
+                    errorElement.style.color = 'red';
+                    errorElement.style.fontSize = '12px';
+                    field?.parentElement?.appendChild(errorElement);
+                }
+                errorElement.textContent = this.errors[fieldName as keyof ValidationErrors];
+            } else if (errorElement) {
+                errorElement.remove();
+            }
+        }
+
+        private getFormData(): FormData {
+            return {
+                nombre: (document.getElementById('nombre') as HTMLInputElement).value,
+                asunto: (document.getElementById('asunto') as HTMLInputElement).value,
+                email: (document.getElementById('email') as HTMLInputElement).value,
+                mensaje: (document.getElementById('mensaje') as HTMLTextAreaElement).value
+            };
+        }
+
+        private handleSubmit(): void {
+            const formData = this.getFormData();
+            console.log('Formulario enviado con éxito:', formData);
+            // Aquí puedes agregar la lógica para enviar los datos al servidor
+            this.form.reset();
+        }
+    }
+
+    // Inicializar el validador cuando el DOM esté listo
+    document.addEventListener('DOMContentLoaded', () => {
+        new FormValidator();
+    });
+</script>
+
+
+<Layout>
+    <section class={contact2.section}>
+        <div class={contact2.div1}>
+          <h3 class={contact2.h3}>Contactame</h3>
+          <p>info@diegocorrea.com</p>
+        </div>
+    
+        <div class={contact2.div2}>
+            <h3>FORMULARIO DE CONTACTO</h3>
+            <form class={contact2.form}  id="contactForm" autocomplete="off">
+                <div>
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" autocomplete="new-password"  required>
+                </div>
+                <div class={contact2.separador}></div>
+                
+                <div>
+                    <label for="asunto">Asunto:</label>
+                    <input type="text" id="asunto" name="asunto" autocomplete="new-password"  required>
+                </div>
+                <div class={contact2.separador}></div>
+
+                <div>
+                    <label for="asunto">Email:</label>
+                    <input type="text" id="email" name="email" autocomplete="new-password" required>
+                </div>
+                <div class={contact2.separador}></div>
+                
+                <div>
+                    <label for="mensaje">Mensaje:</label>
+                    <textarea id="mensaje" name="mensaje" rows="2" required></textarea>
+                </div>
+                <div class={contact2.separador}></div>
+                
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+      </section>
+</Layout>
