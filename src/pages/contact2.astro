@@ -125,7 +125,7 @@ import contact2 from "../components/css/contact2.module.css";
                     errorElement.style.fontSize = '12px';
                     field?.parentElement?.appendChild(errorElement);
                 }
-                errorElement.textContent = this.errors[fieldName as keyof ValidationErrors];
+                errorElement.textContent = this.errors[fieldName as keyof ValidationErrors] ?? ''; // Asegura que sea string
             } else if (errorElement) {
                 errorElement.remove();
             }
@@ -153,6 +153,7 @@ import contact2 from "../components/css/contact2.module.css";
         new FormValidator();
     });
 </script>
+
 
 
 <Layout>
