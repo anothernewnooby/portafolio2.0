@@ -133,6 +133,7 @@
       height: auto;
       padding: 1rem;
       flex-direction: column;
+      margin-top: 10rem;
     }
   
     .div1 {
@@ -160,6 +161,7 @@
       width: 100%;
       height: auto;
       margin-top: 2rem;
+      margin-bottom: 15rem;
       padding: 1.5rem;
     }
   

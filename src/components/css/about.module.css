@@ -99,6 +99,7 @@
     height: auto;
     flex-direction: column;
     padding: 1rem;
+    margin-top: 10rem;
   }
 
   .div1,
@@ -122,6 +123,7 @@
 
   .div2 {
     gap: 2rem;
+    margin-bottom: 10rem;
   }
 
   .div2 > div {
@@ -147,3 +149,4 @@
     }
   }
 }
+
