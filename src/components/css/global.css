@@ -7,6 +7,7 @@
   --secondFont: "Montserrat", serif;
 }
 
+
 @font-face {
   font-family: "Ailerons";
   src: url("/fonts/Ailerons-Typeface.otf") format("opentype");
@@ -16,11 +17,13 @@
 
 html {
   height: auto;
-  /* overflow: hidden; */
   font-size: 62.5%;
+  box-sizing: border-box;
 }
 
 body {
   background-image: linear-gradient(to bottom, #0c0a09, var(--primary));
   background-repeat: no-repeat;
+  box-sizing: border-box;
+
 }
