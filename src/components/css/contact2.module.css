@@ -127,3 +127,75 @@
     background-color: var(--accentColor);
     filter: drop-shadow( 0 0 0.5rem var(--accentColor));
 }
+
+@media (max-width: 768px) {
+    .section {
+      height: auto;
+      padding: 1rem;
+      flex-direction: column;
+    }
+  
+    .div1 {
+      height: auto;
+      padding: 2rem;
+    }
+  
+    .h3 {
+      font-size: 3rem;
+      margin-right: 0;
+      text-align: center;
+    }
+  
+    .div1 > p {
+      font-size: 1.5rem;
+      margin-right: 0;
+      text-align: center;
+    }
+  
+    .div2 {
+      position: static;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: auto;
+      margin-top: 2rem;
+      padding: 1.5rem;
+    }
+  
+    .div2 > h3 {
+      font-size: 1.8rem;
+      margin-bottom: 4rem;
+      text-align: center;
+    }
+  
+    .form > div {
+      width: 100%;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+  
+    .form > div > label {
+      font-size: 1.6rem;
+      padding-top: 0;
+    }
+  
+    .form > div > input,
+    .form > div > textarea {
+      width: 100%;
+      font-size: 1.6rem;
+      height: 2.5rem;
+    }
+  
+    .separador {
+      width: 100%;
+      margin: 1rem 0;
+    }
+  
+    .form > button {
+      width: 100%;
+      margin: 1rem 0;
+      font-size: 1.8rem;
+    }
+  }
+  
