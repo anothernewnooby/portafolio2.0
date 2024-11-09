@@ -120,7 +120,7 @@ h1 {
 @media (max-width: 768px) {
   .section {
     padding-left: 1rem;
-    height: auto;
+    height: 100dvh;
     margin-top: 10rem;
   }
 
